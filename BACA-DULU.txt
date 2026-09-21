@@ -1,0 +1,34 @@
+QUIET — WEB DUA HALAMAN QR
+
+Web ini berisi sampul minimal dan dua halaman QR terpisah.
+Tidak ada isi surat panjang, musik, foto bawaan, database, atau pelacak.
+
+CARA MEMBUKA DI WINDOWS
+1. Klik kanan ZIP, pilih Extract All / Ekstrak Semua.
+2. Buka folder quiet-web hasil ekstrak.
+3. Klik dua kali index.html.
+
+CARA MENGGUNAKAN
+1. Klik tombol panah pada sampul untuk membuka halaman pertama.
+2. Klik panah kanan untuk membuka halaman kedua.
+3. Klik panah kiri untuk kembali ke halaman pertama.
+4. Klik tombol kiri atas atau tekan Esc untuk kembali ke sampul.
+5. Keyboard: panah kanan/kiri juga dapat digunakan.
+
+CARA MENGGANTI QR DI VISUAL STUDIO CODE
+1. File > Open Folder > pilih folder quiet-web.
+2. Masukkan gambar QR ke folder assets.
+3. Cara termudah: beri nama qr-1.png dan qr-2.png untuk mengganti gambar bawaan.
+4. Atau buka config.js dan ubah qrOne serta qrTwo sesuai nama file.
+5. Tekan Ctrl+S lalu refresh browser.
+
+PENGATURAN CONFIG.JS
+browserTitle: judul tab browser.
+qrOne: lokasi gambar QR halaman pertama.
+qrTwo: lokasi gambar QR halaman kedua.
+
+Jangan menghapus koma antar-pengaturan.
+
+File ini adalah website statis, bukan installer Windows/APK.
+Bisa dijalankan offline. Untuk membagikan link, unggah seluruh isi folder
+ke layanan hosting statis pilihanmu.

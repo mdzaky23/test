@@ -1,0 +1,7 @@
+.page{position:relative;align-items:center;justify-content:center}
+.qr-wrap{width:min(100%,430px);margin:auto;padding:18px;border:1px solid #a8927940;background:#fff}
+.qr-wrap img{display:block;width:100%;max-height:none;aspect-ratio:1;object-fit:contain}
+.page-nav{position:absolute;right:28px;bottom:26px;display:grid;place-items:center;width:48px;height:48px;border:1px solid #a8927966;border-radius:50%;color:#806e62;background:transparent;cursor:pointer;transition:background .2s,transform .2s}
+.page-nav.prev{right:auto;left:28px}
+.page-nav:hover{background:#a8927912;transform:translateY(-2px)}
+@media(max-width:600px){.qr-wrap{padding:12px}.page-nav{right:18px;bottom:18px}.page-nav.prev{right:auto;left:18px}}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <title>Tentang Hadiahnya</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b10;
+      --paper: #f5f3ed;
+      --ink: #191a1e;
+      --muted: #72716d;
+      --gold: #aa8750;
+      --gold-light: #c9ab76;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      font-family: Inter, ui-sans-serif, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #f6f3eb;
+      background:
+        radial-gradient(
+          circle at 14% 5%,
+          rgba(80, 94, 132, 0.2),
+          transparent 30rem
+        ),
+        radial-gradient(
+          circle at 88% 90%,
+          rgba(170, 135, 80, 0.11),
+          transparent 28rem
+        ),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.026;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .shell {
+      width: min(100% - 28px, 760px);
+      margin: auto;
+      padding: 30px 0 42px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 34px;
+    }
+
+    .brand,
+    .number {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+    }
+
+    .number {
+      color: var(--gold-light);
+    }
+
+    .paper {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(32px, 7vw, 72px);
+      border-radius: 6px 16px 16px 6px;
+      color: var(--ink);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.055),
+          transparent 6%,
+          transparent 95%,
+          rgba(0, 0, 0, 0.025)
+        ),
+        var(--paper);
+      box-shadow: 0 32px 100px rgba(0, 0, 0, 0.46);
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: clamp(17px, 3vw, 31px);
+      width: 1px;
+      background: rgba(170, 135, 80, 0.32);
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    .paper h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5.3rem);
+      line-height: 0.94;
+    }
+
+    .paper h2 {
+      margin: 38px 0 12px;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+    }
+
+    .paper p {
+      margin: 0 0 1.25em;
+      font-size: clamp(1rem, 2vw, 1.08rem);
+    }
+
+    .paper .lead {
+      margin: 24px 0 32px;
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.18rem, 3vw, 1.55rem);
+      line-height: 1.58;
+    }
+
+    .rule {
+      width: 52px;
+      height: 1px;
+      margin: 30px 0;
+      background: var(--gold);
+    }
+
+    .note {
+      padding-top: 26px;
+      border-top: 1px solid rgba(25, 26, 30, 0.12);
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .paper {
+        padding: 34px 26px 38px 38px;
+      }
+
+      .paper::before {
+        left: 20px;
+      }
+
+      .paper p {
+        line-height: 1.72;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <header class="top">
+      <a class="brand" href="index.html">Untuk Ituy</a>
+      <span class="number">Surat 01</span>
+    </header>
+
+    <article class="paper">
+      <p class="eyebrow">Tentang Hadiahnya</p>
+
+      <h1>Bukan buat nyogok, yaa.</h1>
+
+      <p class="lead">
+        Ini memang udah aku siapin dari sebelumnya buat hadiah
+        mensive kita tanggal 1 kemarin, cuma belum sempat aku kasih.
+      </p>
+
+      <div class="rule"></div>
+
+      <p>
+        Aku juga nggak asal pilih, karena masing-masing ada alasannya.
+      </p>
+
+      <h2>Kenapa cincin?</h2>
+
+      <p>
+        Aku pilih cincin ini karena selain lucu kalau dipakai sama kamu,
+        bagian cincinnya juga bisa diputar-putar. Jadi kalau kamu lagi
+        gabut, capek, kesel, atau banyak pikiran, setidaknya ada sesuatu
+        yang bisa kamu mainin—kayak finger spinner versi lebih cantik
+        wkwkwk.
+      </p>
+
+      <h2>Kenapa bunga edelweiss bentuk hotwels </h2>
+
+      <p>
+        Edelweiss sering diartikan sebagai simbol kasih sayang yang
+        tulus dan sesuatu yang tetap bertahan meskipun melewati banyak
+        hal. Waktu aku menyiapkan ini, maknanya sederhana: rasa sayang
+        dan semua niat baikku ke kamu memang tulus.
+      </p>
+
+      <div class="rule"></div>
+
+
+      <p class="note">Semoga kamu suka tuy.</p>
+    </article>
+
+    <a class="back" href="index.html">← Kembali ke Halaman Depan</a>
+  </main>
+</body>
+</html>

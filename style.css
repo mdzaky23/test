@@ -1,0 +1,487 @@
+/* ===== WARNA & DASAR ===== */
+
+:root {
+  color-scheme: dark;
+  --bg: #26181e;
+  --accent: #cdb69a;
+  --paper: #f7f4ef;
+  --ink: #392c30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ===== BACKGROUND ===== */
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 48% 35%,
+      #70425044,
+      transparent 62%
+    ),
+    linear-gradient(115deg, transparent, #09090c55);
+}
+
+/* ===== HALAMAN DEPAN ===== */
+
+.stage {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 30px;
+}
+
+.cover {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 1080px);
+  min-height: calc(100svh - 60px);
+  padding: 100px 48px 132px;
+  text-align: center;
+}
+
+.cover-content:empty {
+  display: none;
+}
+
+/* ===== BINGKAI ===== */
+
+.frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid #cdb69a42;
+  pointer-events: none;
+}
+
+.frame::before,
+.frame::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+.frame::before {
+  top: -3px;
+}
+
+.frame::after {
+  bottom: -3px;
+}
+
+/* ===== ORNAMEN LAMA: 3 TAG <i> ===== */
+
+.ornament {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  margin: 15px 0 30px;
+  transform: rotate(-22deg);
+}
+
+.ornament > i {
+  position: absolute;
+  top: 12px;
+  left: 36px;
+  width: 128px;
+  height: 176px;
+  border: 1px solid #cdb69a80;
+  border-radius: 50%;
+}
+
+.ornament > i:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.ornament > i:nth-child(3) {
+  transform: rotate(120deg);
+}
+
+/* ===== ORNAMEN BARU: 8 TULISAN ===== */
+
+.ornament.ornament-nama {
+  width: 260px;
+  height: 260px;
+  margin: 15px 0 40px;
+  color: var(--accent);
+  transform: none;
+}
+
+.ornament-nama > .cincin {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid #cdb69a80;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ornament-nama > .cincin:nth-child(1) {
+  transform: rotate(0deg) scaleX(0.8);
+}
+
+.ornament-nama > .cincin:nth-child(2) {
+  transform: rotate(60deg) scaleX(0.8);
+}
+
+.ornament-nama > .cincin:nth-child(3) {
+  transform: rotate(120deg) scaleX(0.8);
+}
+
+.ornament-nama > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1;
+  white-space: nowrap;
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--sudut))
+    translateY(-115px)
+    rotate(calc(0deg - var(--sudut)));
+}
+
+/* ===== TULISAN ===== */
+
+.eyebrow {
+  margin: 8px 0 24px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(38px, 7vw, 80px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.subtitle {
+  max-width: 480px;
+  margin: 25px auto 0;
+  color: #d9c8ba;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+h2 {
+  margin: 0 0 32px;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+/* ===== TOMBOL NAVIGASI ===== */
+
+.open,
+.back {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid #cdb69a65;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.open {
+  position: absolute;
+  bottom: 48px;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+}
+
+.open:hover,
+.back:hover {
+  background: #cdb69a16;
+  transform: translateY(-3px);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+/* ===== HALAMAN SURAT ===== */
+
+.letter {
+  position: relative;
+  width: min(100%, 760px);
+  padding: 70px 0 30px;
+  animation: arrive 0.6s ease both;
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  padding: 64px 72px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 28px 90px #0004;
+  outline: none;
+}
+
+.paper-rule {
+  height: 1px;
+  margin-bottom: 48px;
+  background: #a8927955;
+}
+
+.date {
+  margin: 0 0 28px;
+  color: #806e62;
+  font: 12px / 1.8 Arial, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+#message {
+  font-size: 18px;
+  line-height: 1.95;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.signature {
+  margin: 40px 0 0;
+  font-size: 25px;
+  font-style: italic;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.paper-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 50px;
+}
+
+.paper-end span {
+  width: 44px;
+  height: 1px;
+  background: #ad958377;
+}
+
+.paper-end i {
+  width: 5px;
+  height: 5px;
+  background: #ad9583;
+  transform: rotate(45deg);
+}
+
+/* ===== GAMBAR ===== */
+
+figure {
+  margin: 35px 0 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+/* ===== ANIMASI ===== */
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== TAMPILAN HP ===== */
+
+@media (max-width: 600px) {
+  .stage {
+    padding: 16px;
+  }
+
+  .cover {
+    min-height: calc(100svh - 32px);
+    padding: 64px 26px 125px;
+  }
+
+  .frame {
+    inset: 4px;
+  }
+
+  .ornament {
+    margin: 0 0 15px;
+    transform: rotate(-22deg) scale(0.85);
+  }
+
+  .ornament.ornament-nama {
+    margin: 0 0 20px;
+    transform: scale(0.40);
+  }
+
+  .open {
+    bottom: 36px;
+  }
+
+  .paper {
+    min-height: 65svh;
+    padding: 38px 28px;
+  }
+
+  .paper-rule {
+    margin-bottom: 30px;
+  }
+
+  .letter {
+    padding-top: 68px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+/* ===== PREFERENSI GERAK ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.ornament-nama > span {
+  font-size: 18px;
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--sudut))
+    translateY(-65px)
+    rotate(calc(0deg - var(--sudut)));
+}
+.ornamen-oval {
+  position: relative;
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  margin: 15px auto 35px;
+  color: #cdb69a;
+}
+
+.ornamen-oval .oval {
+  position: absolute;
+  top: 15px;
+  left: 43px;
+  width: 154px;
+  height: 210px;
+  border: 1px solid #cdb69a80;
+  border-radius: 50%;
+}
+
+.ornamen-oval .oval:nth-child(1) {
+  transform: rotate(-22deg);
+}
+
+.ornamen-oval .oval:nth-child(2) {
+  transform: rotate(38deg);
+}
+
+.ornamen-oval .oval:nth-child(3) {
+  transform: rotate(98deg);
+}
+
+.ornamen-oval .oval span {
+  position: absolute;
+  left: 50%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ornamen-oval .atas {
+  top: 5px;
+  transform: translateX(-50%);
+}
+
+.ornamen-oval .bawah {
+  bottom: 5px;
+  transform: translateX(-50%) rotate(180deg);
+}
+/* Rapikan tulisan di dalam oval */
+.ornamen-oval .oval {
+  border-color: #cdb69a60;
+}
+
+.ornamen-oval .oval span {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.ornamen-oval .atas {
+  top: 7px;
+}
+
+.ornamen-oval .bawah {
+  bottom: 7px;
+}
